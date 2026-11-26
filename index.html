@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moh. Haironi, S.Kom — Programmer & Network Engineer</title>
+    <meta name="description" content="Portofolio dan Curriculum Vitae resmi Moh. Haironi, S.Kom — Programmer & Ahli Teknik Komputer dan Jaringan dari Banyuwangi.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#060a13',
+                            900: '#0b1120',
+                            800: '#111827',
+                            700: '#1e293b',
+                        },
+                        emerald: {
+                            450: '#10b981',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Kustomisasi Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1120;
+        }
+        html:not(.dark) ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+
+        /* Kursor Efek Mengetik */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.85s infinite;
+            color: #10b981;
+            margin-left: 2px;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Efek Animasi Muncul Saat Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Pola Grid Latar Belakang Halus */
+        .bg-grid-pattern {
+            background-size: 36px 36px;
+            background-image: 
+                linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+        }
+
+        /* Gaya Khusus Cetak / Simpan PDF (Formal CV Layout) */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+                font-size: 11pt;
+            }
+            .no-print, nav, footer, #toast-container, .bg-glow, #quick-contact-form, .filter-tabs {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            section {
+                padding-top: 1.25rem !important;
+                padding-bottom: 1.25rem !important;
+                page-break-inside: avoid;
+            }
+            .card-surface {
+                background: #ffffff !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                color: #0f172a !important;
+            }
+            .text-slate-300, .text-slate-400, .dark\:text-slate-300, .dark\:text-slate-400 {
+                color: #334155 !important;
+            }
+            .text-white, .dark\:text-white {
+                color: #0f172a !important;
+            }
+            .skill-bar-fill {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            a {
+                text-decoration: none !important;
+                color: #0f172a !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-navy-950 dark:text-slate-100 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-400 transition-colors duration-300 relative overflow-x-hidden">
+
+    <!-- Dekorasi Cahaya Latar Belakang (Ambient Glow) -->
+    <div class="bg-glow pointer-events-none fixed inset-0 overflow-hidden z-0">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/5 dark:bg-amber-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Pola Grid -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+
+    <!-- Container Notifikasi Toast -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 pointer-events-none"></div>
+
+    <!-- Sticky Glassmorphism Navbar -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 dark:bg-navy-950/80 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300 no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Brand / Logo -->
+                <a href="#tentang" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center text-white font-mono font-bold text-lg shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                        MH
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                            Moh. Haironi<span class="text-emerald-500">, S.Kom</span>
+                        </span>
+                        <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                            &lt;Programmer /&gt;
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Menu Navigasi Desktop -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2" id="desktop-nav">
+                    <a href="#tentang" data-nav="tentang" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Tentang</a>
+                    <a href="#keahlian" data-nav="keahlian" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Keahlian</a>
+                    <a href="#pendidikan" data-nav="pendidikan" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Pendidikan</a>
+                    <a href="#portofolio" data-nav="portofolio" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Portofolio</a>
+                    <a href="#kontak" data-nav="kontak" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Kontak</a>
+                </nav>
+
+                <!-- Tombol Aksi Kanan (Theme Switch, Cetak PDF, Menu Mobile) -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Tombol Cetak / Simpan PDF -->
+                    <button onclick="window.print()" title="Cetak atau Simpan sebagai PDF" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/90 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all cursor-pointer">
+                        <i class="fa-solid fa-print text-emerald-500"></i>
+                        <span class="hidden sm:inline">Cetak CV</span>
+                    </button>
+
+                    <!-- Tombol Switch Tema Terang / Gelap -->
+                    <button id="theme-toggle" aria-label="Ganti Tema Tampilan" title="Ganti Mode Terang / Gelap" class="w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/90 dark:hover:bg-slate-700 text-slate-700 dark:text-amber-400 border border-slate-200 dark:border-slate-700 transition-all cursor-pointer">
+                        <i id="theme-icon" class="fa-solid fa-sun text-base"></i>
+                    </button>
+
+                    <!-- Tombol Menu Mobile -->
+                    <button id="mobile-menu-btn" aria-label="Buka Menu Navigasi" class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Navigasi Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-navy-900/95 backdrop-blur-xl px-4 py-4 space-y-1.5">
+            <a href="#tentang" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Tentang Saya</a>
+            <a href="#keahlian" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Keahlian Utama</a>
+            <a href="#pendidikan" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Riwayat Pendidikan</a>
+            <a href="#portofolio" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Portofolio</a>
+            <a href="#kontak" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Kontak & Lokasi</a>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- HERO SECTION / TENTANG SAYA -->
+        <section id="tentang" class="pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Kolom Kiri: Perkenalan & Informasi Utama -->
+                <div class="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
+                    <!-- Badge Status Karier -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-700 dark:text-emerald-400 text-xs sm:text-sm font-medium mb-6">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        Tersedia untuk Proyek & Kolaborasi
+                    </div>
+
+                    <!-- Nama Lengkap -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-4">
+                        Moh. Haironi<span class="bg-gradient-to-r from-emerald-400 via-cyan-400 to-amber-400 bg-clip-text text-transparent">, S.Kom</span>
+                    </h1>
+
+                    <!-- Efek Typing Role / Tujuan Karier -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-lg sm:text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-6 font-mono">
+                        <span class="text-slate-400 dark:text-slate-500 text-base sm:text-xl">&gt;_</span>
+                        <span>Tujuan Karier:</span>
+                        <span id="typing-text" class="text-emerald-600 dark:text-emerald-400 typing-cursor">Programmer</span>
+                    </div>
+
+                    <!-- Ringkasan Profesional -->
+                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
+                        Lulusan Sarjana Komputer (<strong class="text-slate-900 dark:text-white font-semibold">STIKOM PGRI Banyuwangi</strong>) dengan kompetensi kuat pada <strong class="text-emerald-600 dark:text-emerald-400 font-semibold">Pemrograman Web</strong> serta <strong class="text-cyan-600 dark:text-cyan-400 font-semibold">Teknik Komputer dan Jaringan</strong>. Berdedikasi membangun solusi perangkat lunak web yang modern, efisien, aman, dan didukung infrastruktur jaringan yang andal.
+                    </p>
+
+                    <!-- Info Cepat Lokasi & Kontak -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-y-2.5 gap-x-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-8">
+                        <span class="inline-flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-emerald-500"></i>
+                            Blimbingsari, Banyuwangi
+                        </span>
+                        <span class="inline-flex items-center gap-2 font-mono">
+                            <i class="fa-solid fa-phone text-cyan-500"></i>
+                            087857173593
+                        </span>
+                        <span class="inline-flex items-center gap-2 font-mono">
+                            <i class="fa-solid fa-envelope text-amber-500"></i>
+                            haironi.muh86@gmail.com
+                        </span>
+                    </div>
+
+                    <!-- Tombol CTA Utama -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 no-print">
+                        <a href="https://tawangdev.vercel.app" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl font-semibold text-white bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 shadow-lg shadow-emerald-600/25 hover:shadow-emerald-500/40 transform hover:-translate-y-0.5 transition-all">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>Kunjungi Portofolio (tawangdev.vercel.app)</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-80"></i>
+                        </a>
+
+                        <a href="https://wa.me/6287857173593?text=Halo%20Moh.%20Haironi,%20S.Kom,%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20peluang%20kerja%20/%20proyek." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl font-semibold bg-white dark:bg-navy-800/90 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
+                            <span>Hubungi via WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Foto Profil dengan Bingkai Modern -->
+                <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
+                    <div class="relative group animate-float">
+                        <!-- Efek Cincin Gradient di Belakang Foto -->
+                        <div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-emerald-500 via-cyan-500 to-amber-400 opacity-75 blur-md group-hover:opacity-100 group-hover:blur-lg transition-all duration-500"></div>
+                        
+                        <!-- Bingkai Utama Foto -->
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-1.5 bg-gradient-to-tr from-emerald-500 via-cyan-500 to-amber-400 shadow-2xl">
+                            <div class="w-full h-full rounded-[1.25rem] overflow-hidden bg-[#dc2626] relative">
+                                <img 
+                                    id="profile-photo-img"
+                                    src="CROPPED_profile_logo_AOAJY_16ada05214aa9a815c6159c4ab557994.webp" 
+                                    alt="Foto Profil Moh. Haironi, S.Kom" 
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                    onerror="handleProfileImageError(this)"
+                                >
+                                <!-- Overlay Gradasi Halus di Bawah Foto -->
+                                <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-navy-950/75 via-navy-950/20 to-transparent pointer-events-none"></div>
+
+                                <!-- Tombol Ganti/Muat Foto Lokal (Muncul saat hover untuk memudahkan preview/edit) -->
+                                <label for="upload-profile-photo" title="Ganti atau muat ulang file foto profil" class="no-print absolute top-3 left-3 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 bg-navy-950/80 hover:bg-emerald-600 text-white text-[11px] font-mono px-2.5 py-1.5 rounded-xl backdrop-blur-md border border-white/15 cursor-pointer flex items-center gap-1.5 shadow-lg">
+                                    <i class="fa-solid fa-camera text-emerald-400 group-hover:text-white"></i>
+                                    <span>Ganti Foto</span>
+                                </label>
+                                <input type="file" id="upload-profile-photo" accept="image/*" class="hidden" onchange="previewUploadedPhoto(event)">
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge Gelar & Fokus -->
+                        <div class="absolute -bottom-4 -left-3 sm:-left-6 bg-white/95 dark:bg-navy-800/95 backdrop-blur-md border border-slate-200 dark:border-slate-700 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-500 flex items-center justify-center">
+                                <i class="fa-solid fa-code text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] font-mono text-slate-500 dark:text-slate-400 leading-none">Fokus Utama</p>
+                                <p class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-1">Web Programmer</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge Jaringan -->
+                        <div class="absolute -top-3 -right-3 sm:-right-5 bg-white/95 dark:bg-navy-800/95 backdrop-blur-md border border-slate-200 dark:border-slate-700 px-3.5 py-2 rounded-2xl shadow-xl flex items-center gap-2.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+                            <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200">TKJ &amp; Web Dev</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION KEAHLIAN UTAMA -->
+        <section id="keahlian" class="py-16 sm:py-24 border-t border-slate-200/80 dark:border-slate-800/80 reveal">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="inline-block font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">
+                        // Kompetensi &amp; Keahlian
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        Keahlian Teknis Utama
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2 max-w-xl text-sm sm:text-base">
+                        Kombinasi keahlian pengembangan aplikasi web modern dan manajemen infrastruktur jaringan komputer.
+                    </p>
+                </div>
+
+                <!-- Tab Filter Interaktif -->
+                <div class="filter-tabs inline-flex p-1.5 rounded-2xl bg-slate-200/70 dark:bg-navy-800/90 border border-slate-300/60 dark:border-slate-700/80 self-start">
+                    <button data-filter="all" class="skill-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-emerald-500 text-slate-900 dark:text-navy-950 shadow-sm transition-all cursor-pointer">
+                        Semua
+                    </button>
+                    <button data-filter="web" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer">
+                        Pemrograman Web
+                    </button>
+                    <button data-filter="network" class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer">
+                        Komputer &amp; Jaringan
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Kartu Keahlian -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8" id="skills-grid">
+                
+                <!-- Kartu 1: Pemrograman Web -->
+                <div data-category="web" class="skill-card card-surface group rounded-3xl p-6 sm:p-8 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 shadow-sm hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-2xl group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <span class="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-medium">Fokus Karier Utama</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Pemrograman Web</h3>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            Full-Stack Web
+                        </span>
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                        Merancang, mengembangkan, dan memelihara aplikasi berbasis web yang responsif, terstruktur, dan berorientasi pada performa serta pengalaman pengguna.
+                    </p>
+
+                    <!-- Daftar Progress Bar Kompetensi -->
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                <span class="text-slate-700 dark:text-slate-200">Frontend Development (HTML5, CSS3, Tailwind, JavaScript)</span>
+                                <span class="font-mono text-emerald-600 dark:text-emerald-400">92%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-navy-950 overflow-hidden">
+                                <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400 transition-all duration-1000 ease-out" style="width: 0%" data-width="92%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                <span class="text-slate-700 dark:text-slate-200">Backend &amp; REST API Architecture (PHP / Laravel / Node.js)</span>
+                                <span class="font-mono text-emerald-600 dark:text-emerald-400">88%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-navy-950 overflow-hidden">
+                                <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400 transition-all duration-1000 ease-out" style="width: 0%" data-width="88%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                <span class="text-slate-700 dark:text-slate-200">Database Management &amp; Deployment (MySQL, Git, Vercel/Hosting)</span>
+                                <span class="font-mono text-emerald-600 dark:text-emerald-400">90%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-navy-950 overflow-hidden">
+                                <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400 transition-all duration-1000 ease-out" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tag Teknologi -->
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-200/70 dark:border-slate-700/70">
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">HTML5 &amp; CSS3</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">JavaScript (ES6+)</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Tailwind CSS</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">PHP / MySQL</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">REST API</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Git &amp; Cloud Deploy</span>
+                    </div>
+                </div>
+
+                <!-- Kartu 2: Teknik Komputer dan Jaringan -->
+                <div data-category="network" class="skill-card card-surface group rounded-3xl p-6 sm:p-8 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 dark:hover:border-cyan-500/50 shadow-sm hover:shadow-xl hover:shadow-cyan-500/5 transition-all duration-300">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-amber-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 text-2xl group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <span class="font-mono text-xs text-cyan-600 dark:text-cyan-400 font-medium">Infrastruktur &amp; Sistem</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Teknik Komputer &amp; Jaringan</h3>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+                            IT Infrastructure
+                        </span>
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                        Instalasi, konfigurasi, pemeliharaan perangkat keras komputer, manajemen jaringan lokal/luas (LAN/WAN), serta administrasi server yang stabil.
+                    </p>
+
+                    <!-- Daftar Progress Bar Kompetensi -->
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                <span class="text-slate-700 dark:text-slate-200">Network Infrastructure, Routing &amp; Switching (MikroTik)</span>
+                                <span class="font-mono text-cyan-600 dark:text-cyan-400">90%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-navy-950 overflow-hidden">
+                                <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-cyan-500 to-amber-400 transition-all duration-1000 ease-out" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                <span class="text-slate-700 dark:text-slate-200">Server Administration &amp; Web Hosting Environment (Linux)</span>
+                                <span class="font-mono text-cyan-600 dark:text-cyan-400">85%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-navy-950 overflow-hidden">
+                                <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-cyan-500 to-amber-400 transition-all duration-1000 ease-out" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                <span class="text-slate-700 dark:text-slate-200">Hardware Maintenance, Diagnosa &amp; Network Troubleshooting</span>
+                                <span class="font-mono text-cyan-600 dark:text-cyan-400">94%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-navy-950 overflow-hidden">
+                                <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-cyan-500 to-amber-400 transition-all duration-1000 ease-out" style="width: 0%" data-width="94%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tag Teknologi -->
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-200/70 dark:border-slate-700/70">
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MikroTik RouterOS</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">LAN / WAN / VLAN</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Linux Server</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Troubleshooting</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Hardware &amp; OS</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION RIWAYAT PENDIDIKAN -->
+        <section id="pendidikan" class="py-16 sm:py-24 border-t border-slate-200/80 dark:border-slate-800/80 reveal">
+            <div class="max-w-3xl mb-12">
+                <span class="inline-block font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">
+                    // Latar Belakang Akademik
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    Riwayat Pendidikan
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm sm:text-base">
+                    Perjalanan pendidikan formal dari jenjang dasar hingga perguruan tinggi di bidang Teknologi Informasi.
+                </p>
+            </div>
+
+            <!-- Timeline Vertikal Interaktif -->
+            <div class="relative pl-8 sm:pl-10 space-y-6 before:content-[''] before:absolute before:left-[15px] sm:before:left-[19px] before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-emerald-500 before:via-cyan-500 before:to-slate-300 dark:before:to-slate-700">
+                
+                <!-- Item 1: Perguruan Tinggi -->
+                <div class="relative group">
+                    <!-- Titik Indikator Timeline -->
+                    <div class="absolute -left-8 sm:-left-10 top-5 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 ring-4 ring-slate-50 dark:ring-navy-950 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-graduation-cap text-xs sm:text-sm"></i>
+                    </div>
+
+                    <div class="card-surface rounded-2xl p-5 sm:p-7 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 group-hover:border-emerald-500/60 dark:group-hover:border-emerald-500/60 shadow-sm group-hover:shadow-lg transition-all duration-300">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">
+                                Perguruan Tinggi • Sarjana Komputer (S.Kom)
+                            </span>
+                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                                <i class="fa-solid fa-location-dot mr-1 text-emerald-500"></i>Banyuwangi
+                            </span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                            STIKOM PGRI BANYUWANGI
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mt-2 leading-relaxed">
+                            Menyelesaikan pendidikan tinggi di bidang Ilmu Komputer / Teknik Informatika dengan gelar <strong>Sarjana Komputer (S.Kom)</strong>, memperdalam rekayasa perangkat lunak, pemrograman web, basis data, dan arsitektur jaringan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2: SMK -->
+                <div class="relative group">
+                    <div class="absolute -left-8 sm:-left-10 top-5 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center shadow-md ring-4 ring-slate-50 dark:ring-navy-950 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-school text-xs sm:text-sm"></i>
+                    </div>
+
+                    <div class="card-surface rounded-2xl p-5 sm:p-7 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 group-hover:border-cyan-500/60 dark:group-hover:border-cyan-500/60 shadow-sm group-hover:shadow-lg transition-all duration-300">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-700 dark:text-cyan-400">
+                                Sekolah Menengah Kejuruan (SMK)
+                            </span>
+                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                                <i class="fa-solid fa-location-dot mr-1 text-cyan-500"></i>Singojuruh, Banyuwangi
+                            </span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                            SMKN Ihya Ulummudin Singojuruh
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+                            Membangun fondasi kejuruan teknis, kedisiplinan praktik teknologi informasi, serta keterampilan perangkat keras dan jaringan komputer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3: MTs -->
+                <div class="relative group">
+                    <div class="absolute -left-8 sm:-left-10 top-5 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-700 dark:bg-slate-600 text-white flex items-center justify-center shadow-md ring-4 ring-slate-50 dark:ring-navy-950 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-book-open text-xs sm:text-sm"></i>
+                    </div>
+
+                    <div class="card-surface rounded-2xl p-5 sm:p-6 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 group-hover:border-amber-500/50 transition-all duration-300">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-slate-200/80 dark:bg-slate-700/70 text-slate-700 dark:text-slate-300">
+                                Pendidikan Menengah Pertama
+                            </span>
+                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Gintangan, Blimbingsari</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                            MTs Gintangan
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Item 4: SDN -->
+                <div class="relative group">
+                    <div class="absolute -left-8 sm:-left-10 top-5 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-500 dark:bg-slate-700 text-white flex items-center justify-center shadow-md ring-4 ring-slate-50 dark:ring-navy-950 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-building-columns text-xs sm:text-sm"></i>
+                    </div>
+
+                    <div class="card-surface rounded-2xl p-5 sm:p-6 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 group-hover:border-amber-500/50 transition-all duration-300">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-slate-200/80 dark:bg-slate-700/70 text-slate-700 dark:text-slate-300">
+                                Pendidikan Dasar
+                            </span>
+                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Gintangan, Blimbingsari</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                            SDN 1 Gintangan
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION PORTOFOLIO SHOWCASE -->
+        <section id="portofolio" class="py-16 sm:py-24 border-t border-slate-200/80 dark:border-slate-800/80 reveal">
+            <div class="rounded-3xl p-1 bg-gradient-to-r from-emerald-500/40 via-cyan-500/40 to-amber-500/40 shadow-2xl">
+                <div class="card-surface rounded-[1.4rem] bg-white dark:bg-navy-900 p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+                    <!-- Aksen Dekoratif -->
+                    <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-emerald-500/10 blur-2xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                        <div class="lg:col-span-7">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <span>Showcase Karya &amp; Proyek</span>
+                            </div>
+
+                            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+                                Eksplorasi Karya Digital di <span class="text-emerald-600 dark:text-emerald-400">TawangDev</span>
+                            </h2>
+
+                            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                                Kunjungi laman portofolio daring saya untuk melihat daftar proyek pengembangan aplikasi web, studi kasus pemrograman, eksperimen antarmuka, serta solusi teknologi yang telah saya bangun.
+                            </p>
+
+                            <div class="flex flex-wrap items-center gap-3">
+                                <a href="https://tawangdev.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl font-semibold text-white bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 shadow-lg shadow-emerald-600/25 transition-all">
+                                    <span>Buka tawangdev.vercel.app</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+
+                                <button onclick="copyToClipboard('https://tawangdev.vercel.app', 'Tautan portofolio')" class="no-print inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl font-semibold text-sm bg-slate-100 hover:bg-slate-200 dark:bg-navy-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all cursor-pointer">
+                                    <i class="fa-regular fa-copy text-emerald-500"></i>
+                                    <span>Salin Link</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Preview Kartu Browser Mini -->
+                        <div class="lg:col-span-5">
+                            <a href="https://tawangdev.vercel.app" target="_blank" rel="noopener noreferrer" class="block group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-navy-950 shadow-xl hover:border-emerald-500/60 transition-all">
+                                <!-- Top Bar Browser -->
+                                <div class="px-4 py-3 bg-slate-200/80 dark:bg-navy-800 border-b border-slate-300/60 dark:border-slate-700 flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                    </div>
+                                    <div class="px-3 py-1 rounded-md bg-white/80 dark:bg-navy-950 text-[11px] font-mono text-slate-600 dark:text-slate-300 truncate max-w-[200px]">
+                                        https://tawangdev.vercel.app
+                                    </div>
+                                    <i class="fa-solid fa-up-right-from-square text-xs text-slate-400 group-hover:text-emerald-400 transition-colors"></i>
+                                </div>
+                                <!-- Body Browser Preview -->
+                                <div class="p-6 text-center bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 text-white">
+                                    <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xl mb-3 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-terminal"></i>
+                                    </div>
+                                    <p class="font-mono text-xs text-emerald-400 mb-1">PORTFOLIO WEBSITE</p>
+                                    <h3 class="text-lg font-bold tracking-tight">tawangdev.vercel.app</h3>
+                                    <p class="text-xs text-slate-400 mt-2">Klik kartu ini untuk mengunjungi website portofolio secara langsung</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION KONTAK & ALAMAT -->
+        <section id="kontak" class="py-16 sm:py-24 border-t border-slate-200/80 dark:border-slate-800/80 reveal">
+            <div class="max-w-3xl mb-12">
+                <span class="inline-block font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">
+                    // Hubungi Saya
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    Informasi Kontak &amp; Domisili
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm sm:text-base">
+                    Silakan hubungi saya untuk diskusi peluang karier sebagai Programmer, kolaborasi proyek web, maupun konsultasi infrastruktur jaringan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Kolom Kiri: Kartu Detail Kontak -->
+                <div class="lg:col-span-6 space-y-4">
+                    
+                    <!-- Kartu Telepon / WhatsApp -->
+                    <div class="card-surface rounded-2xl p-5 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 min-w-0">
+                            <div class="w-12 h-12 shrink-0 rounded-2xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Telepon / WhatsApp</p>
+                                <a href="https://wa.me/6287857173593" target="_blank" rel="noopener noreferrer" class="text-base sm:text-lg font-bold font-mono text-slate-900 dark:text-white hover:text-emerald-500 transition-colors block truncate">
+                                    087857173593
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0 no-print">
+                            <button onclick="copyToClipboard('087857173593', 'Nomor telepon')" title="Salin Nomor Telepon" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-navy-900 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                            <a href="https://wa.me/6287857173593" target="_blank" rel="noopener noreferrer" title="Chat WhatsApp" class="w-10 h-10 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center shadow-md transition-colors">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Email -->
+                    <div class="card-surface rounded-2xl p-5 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 min-w-0">
+                            <div class="w-12 h-12 shrink-0 rounded-2xl bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Alamat Email</p>
+                                <a href="mailto:haironi.muh86@gmail.com" class="text-sm sm:text-base font-bold font-mono text-slate-900 dark:text-white hover:text-cyan-500 transition-colors block truncate">
+                                    haironi.muh86@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0 no-print">
+                            <button onclick="copyToClipboard('haironi.muh86@gmail.com', 'Alamat email')" title="Salin Alamat Email" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-navy-900 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                            <a href="mailto:haironi.muh86@gmail.com" title="Kirim Email" class="w-10 h-10 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white flex items-center justify-center shadow-md transition-colors">
+                                <i class="fa-solid fa-envelope-open-text text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Alamat Lengkap -->
+                    <div class="card-surface rounded-2xl p-5 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 shrink-0 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mt-0.5">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Alamat Lengkap</p>
+                                <p class="text-sm sm:text-base font-semibold text-slate-900 dark:text-white leading-relaxed mt-0.5">
+                                    Dusun Krajan, Desa Gintangan, Kecamatan Blimbingsari, Kabupaten Banyuwangi
+                                </p>
+                            </div>
+                        </div>
+                        <button onclick="copyToClipboard('Dusun Krajan Desa Gintangan Kecamatan Blimbingsari Kabupaten Banyuwangi', 'Alamat lengkap')" title="Salin Alamat" class="no-print w-10 h-10 shrink-0 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-navy-900 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Kolom Kanan: Form Kontak Cepat Interaktif -->
+                <div id="quick-contact-form" class="lg:col-span-6 no-print">
+                    <div class="card-surface rounded-3xl p-6 sm:p-8 bg-white/90 dark:bg-navy-800/60 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-1.5">
+                            Kirim Pesan Cepat
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-6">
+                            Tulis pesan Anda di bawah ini untuk langsung terhubung ke WhatsApp atau Email saya secara otomatis.
+                        </p>
+
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="senderName" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Nama / Instansi Anda</label>
+                                <input type="text" id="senderName" required placeholder="Contoh: Budi Santoso — PT Teknologi Nusantara" class="w-full px-4 py-3 rounded-xl text-sm bg-slate-50 dark:bg-navy-950 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="senderSubject" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Keperluan</label>
+                                <select id="senderSubject" class="w-full px-4 py-3 rounded-xl text-sm bg-slate-50 dark:bg-navy-950 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                                    <option value="Penawaran Karier / Rekrutmen Programmer">Penawaran Karier / Rekrutmen Programmer</option>
+                                    <option value="Pembuatan Website / Aplikasi Web">Pembuatan Website / Aplikasi Web</option>
+                                    <option value="Konfigurasi Jaringan & Infrastruktur IT">Konfigurasi Jaringan &amp; Infrastruktur IT</option>
+                                    <option value="Kolaborasi & Diskusi Umum">Kolaborasi &amp; Diskusi Umum</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="senderMessage" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Pesan Singkat</label>
+                                <textarea id="senderMessage" rows="3" required placeholder="Tuliskan detail pesan atau penawaran Anda..." class="w-full px-4 py-3 rounded-xl text-sm bg-slate-50 dark:bg-navy-950 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"></textarea>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <button type="button" onclick="sendViaWhatsApp()" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all cursor-pointer">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                    <span>Kirim via WhatsApp</span>
+                                </button>
+                                <button type="button" onclick="sendViaEmail()" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-slate-800 dark:text-white bg-slate-200 hover:bg-slate-300 dark:bg-navy-700 dark:hover:bg-slate-600 transition-all cursor-pointer">
+                                    <i class="fa-solid fa-envelope text-cyan-500"></i>
+                                    <span>Kirim via Email</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-slate-200/80 dark:border-slate-800/80 bg-white/60 dark:bg-navy-950/80 backdrop-blur-md no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <p>
+                &copy; <span id="current-year"></span> <strong class="text-slate-800 dark:text-slate-200">Moh. Haironi, S.Kom</strong>. Hak Cipta Dilindungi.
+            </p>
+            <div class="flex items-center gap-5">
+                <a href="https://tawangdev.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition-colors font-mono">
+                    tawangdev.vercel.app
+                </a>
+                <a href="#tentang" class="inline-flex items-center gap-1.5 hover:text-emerald-500 transition-colors">
+                    <span>Ke Atas</span>
+                    <i class="fa-solid fa-arrow-up text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // 1. Inisialisasi Tahun Otomatis di Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 1B. Penanganan Foto Profil (Memastikan tampil & mendukung preview file lokal)
+        function handleProfileImageError(img) {
+            if (!img.dataset.retried) {
+                img.dataset.retried = 'true';
+                img.src = './CROPPED_profile_logo_AOAJY_16ada05214aa9a815c6159c4ab557994.webp';
+                return;
+            }
+            img.onerror = null;
+            // Fallback ilustrasi resmi berjas & berdasi dengan latar merah sesuai foto asli jika file terpisah belum berada di folder yang sama
+            img.src = "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23dc2626'/%3E%3Cpath d='M55 400 C65 305 130 285 200 285 C270 285 335 305 345 400 Z' fill='%231e293b'/%3E%3Cpolygon points='165,285 235,285 200,385' fill='%23ffffff'/%3E%3Cpolygon points='192,295 208,295 213,375 200,395 187,375' fill='%23334155'/%3E%3Cellipse cx='200' cy='175' rx='66' ry='82' fill='%23d99b72'/%3E%3Cpath d='M134 165 C132 100 268 100 266 165 C262 125 138 125 134 165 Z' fill='%2318181b'/%3E%3Ccircle cx='176' cy='172' r='6' fill='%2318181b'/%3E%3Ccircle cx='224' cy='172' r='6' fill='%2318181b'/%3E%3Cpath d='M180 218 Q200 230 220 218' stroke='%237c2d12' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ctext x='200' y='388' font-family='sans-serif' font-size='13' font-weight='bold' fill='%23f8fafc' text-anchor='middle'%3EMoh. Haironi, S.Kom%3C/text%3E%3C/svg%3E";
+        }
+
+        function previewUploadedPhoto(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imgEl = document.getElementById('profile-photo-img');
+                imgEl.src = e.target.result;
+                try {
+                    localStorage.setItem('custom-profile-photo', e.target.result);
+                } catch (err) {
+                    // Abaikan jika ukuran gambar melebihi kuota localStorage
+                }
+                showToast('Foto profil berhasil diperbarui!');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedPhoto = localStorage.getItem('custom-profile-photo');
+            if (savedPhoto) {
+                const imgEl = document.getElementById('profile-photo-img');
+                if (imgEl) imgEl.src = savedPhoto;
+            }
+        });
+
+        // 2. Pengaturan Tema Gelap / Terang (Dark / Light Mode) dengan LocalStorage
+        const htmlEl = document.documentElement;
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                htmlEl.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                htmlEl.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+
+        const savedTheme = localStorage.getItem('cv-theme') || 'dark';
+        applyTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = htmlEl.classList.contains('dark');
+            const newTheme = isDark ? 'light' : 'dark';
+            localStorage.setItem('cv-theme', newTheme);
+            applyTheme(newTheme);
+        });
+
+        // 3. Menu Navigasi Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuIcon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+            });
+        });
+
+        // 4. Efek Typing Text Interaktif untuk Tujuan Karier
+        const roles = [
+            "Programmer",
+            "Web Developer",
+            "Network Engineer",
+            "IT Infrastructure Specialist"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingEl = document.getElementById('typing-text');
+
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                typingEl.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingEl.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let speed = isDeleting ? 45 : 95;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                speed = 2000; // Jeda setelah selesai mengetik
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                speed = 400;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+        setTimeout(typeEffect, 800);
+
+        // 5. Filter Kartu Keahlian
+        const filterBtns = document.querySelectorAll('.skill-filter-btn');
+        const skillCards = document.querySelectorAll('.skill-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Perbarui tampilan tombol aktif
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-white', 'dark:bg-emerald-500', 'text-slate-900', 'dark:text-navy-950', 'shadow-sm');
+                    b.classList.add('text-slate-600', 'dark:text-slate-300');
+                });
+                btn.classList.add('active', 'bg-white', 'dark:bg-emerald-500', 'text-slate-900', 'dark:text-navy-950', 'shadow-sm');
+                btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+                skillCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || filter === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 6. Intersection Observer untuk Animasi Reveal & Progress Bar Keahlian
+        const revealElements = document.querySelectorAll('.reveal');
+        const skillBars = document.querySelectorAll('.skill-bar-fill');
+
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Jika elemen yang terlihat berisi skill bar, jalankan animasi lebarnya
+                    if (entry.target.id === 'keahlian') {
+                        skillBars.forEach(bar => {
+                            const targetWidth = bar.getAttribute('data-width');
+                            bar.style.width = targetWidth;
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => sectionObserver.observe(el));
+
+        // 7. Indikator Active Section pada Navbar saat Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop - 130;
+                if (window.scrollY >= secTop) {
+                    currentSection = sec.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-emerald-600', 'dark:text-emerald-400', 'bg-emerald-500/10');
+                if (link.getAttribute('data-nav') === currentSection) {
+                    link.classList.add('text-emerald-600', 'dark:text-emerald-400', 'bg-emerald-500/10');
+                }
+            });
+        });
+
+        // 8. Fungsi Copy to Clipboard + Notifikasi Toast
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-2xl bg-slate-900 dark:bg-navy-800 text-white text-xs sm:text-sm font-medium shadow-2xl border border-emerald-500/40 transform translate-y-4 opacity-0 transition-all duration-300';
+            toast.innerHTML = `
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-check text-xs"></i>
+                </span>
+                <span>${message}</span>
+            `;
+            container.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            });
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function copyToClipboard(text, label) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(`${label} berhasil disalin ke clipboard!`);
+        }
+
+        // 9. Form Kontak Cepat (WhatsApp & Email)
+        function getFormValues() {
+            const name = document.getElementById('senderName').value.trim();
+            const subject = document.getElementById('senderSubject').value;
+            const message = document.getElementById('senderMessage').value.trim();
+
+            if (!name || !message) {
+                showToast('Mohon lengkapi Nama dan Pesan Anda terlebih dahulu.');
+                return null;
+            }
+            return { name, subject, message };
+        }
+
+        function sendViaWhatsApp() {
+            const data = getFormValues();
+            if (!data) return;
+
+            const text = `Halo *Moh. Haironi, S.Kom*,\n\nPerkenalkan saya *${data.name}*.\n*Keperluan:* ${data.subject}\n\n*Pesan:*\n${data.message}`;
+            const waUrl = `https://wa.me/6287857173593?text=${encodeURIComponent(text)}`;
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function sendViaEmail() {
+            const data = getFormValues();
+            if (!data) return;
+
+            const subject = `[CV Website] ${data.subject} - ${data.name}`;
+            const body = `Halo Moh. Haironi, S.Kom,\n\nPerkenalkan saya ${data.name}.\nKeperluan: ${data.subject}\n\nPesan:\n${data.message}\n\nSalam hormat,\n${data.name}`;
+            const mailtoUrl = `mailto:haironi.muh86@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+        }
+    </script>
+</body>
+</html>
